@@ -44,9 +44,9 @@ export default function Post() {
   }
 
   return (
-    <div>
+    <div className={styles.mainContainer}>
       <Header />
-
+  <main  className={styles.mainContent}>
       <div className={styles.cardPost}>
         <h2>Criar Postagem</h2>
         <hr />
@@ -89,6 +89,7 @@ export default function Post() {
           </form>
         </div>
       </div>
+      </main>
     </div>
   );
 }
