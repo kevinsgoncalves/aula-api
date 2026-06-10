@@ -1,0 +1,69 @@
+.loginContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.loginBox {
+  background-color: #ffffff;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 360px; 
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+}
+
+.loginBox h2 {
+  color: #111111;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.loginBox input {
+  width: 100%; 
+  box-sizing: border-box;
+  padding: 12px 4px;
+  margin-bottom: 24px;
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  font-size: 0.95rem;
+  color: #111111;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.loginBox input:focus {
+  outline: none;
+  border-bottom-color: #111111;
+}
+
+.loginBox button {
+  width: 100%;
+  padding: 14px;
+  background-color: #111111;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px; 
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: 8px;
+}
+
+.loginBox button:hover {
+  opacity: 0.9; 
+}
+
+.erro {
+  color: #ff3333;
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 16px;
+}

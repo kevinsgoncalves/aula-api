@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #111111;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 16px; 
+}
+
+.username {
+  font-size: 0.9rem;
+  color: #666666;
+  font-weight: 400;
+}
+
+.logoutBtn {
+  background: transparent;
+  border: none;
+  color: #ff3333;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: opacity 0.2s;
+}
+
+.logoutBtn:hover {
+  opacity: 0.7;
+}

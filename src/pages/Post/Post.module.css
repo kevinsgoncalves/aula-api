@@ -1,0 +1,107 @@
+.mainContainer {
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.mainContent {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
+}
+
+.cardPost {
+  background-color: #ffffff;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+  border: 1px solid #eaeaea;
+}
+
+.cardPost h2 {
+  font-weight: 500;
+  text-align: center;
+  color: #111111;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+.cardBodyPost {
+  margin-top: 0;
+}
+
+.fields {
+  margin-bottom: 32px;
+}
+
+.fields label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #666666;
+}
+
+.fields input,
+.fields textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  border-radius: 0;
+  outline: 0;
+  font-size: 1rem;
+  padding: 10px 4px;
+  color: #111111;
+  background-color: transparent;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.fields input:focus,
+.fields textarea:focus {
+  border-bottom-color: #111111;
+}
+
+.fields input {
+  height: 40px;
+}
+
+.fields textarea {
+  height: 140px;
+  resize: vertical;
+  padding-top: 10px;
+}
+
+.btnPost {
+  margin-top: 40px;
+}
+
+.btnPost button {
+  width: 100%;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 14px;
+  color: #ffffff;
+  background-color: #111111;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s;
+}
+
+.btnPost button:hover {
+  opacity: 0.9;
+}
+
+.errorMessage {
+  color: #ff3333;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  margin-bottom: 0;
+  min-height: 18px;
+}
