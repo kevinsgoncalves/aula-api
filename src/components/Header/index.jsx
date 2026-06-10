@@ -16,13 +16,13 @@ export default function Header() {
   }, []);
 
   // Mostra o botão voltar apenas se você NÃO estiver na página inicial ("/")
-  const mostrarBotaoVoltar = location.pathname !== "/";
+  const mostrarBotaoVoltar = location.pathname !== "/feed";
 
   return (
     <header className={styles.header}>
       <div className={styles.leftSection}>
         {mostrarBotaoVoltar && (
-          <Link to="/" className={styles.backLink}>
+          <Link to="/feed" className={styles.backLink}>
             <img src={Back} alt="Voltar" className={styles.backIcon} />
           </Link>
         )}
@@ -30,7 +30,7 @@ export default function Header() {
       </div>
       
       <div className={styles.userSection}>
-        <Link to="/post" className={styles.createBtn}>
+        <Link to="/posts" className={styles.createBtn}>
           Nova Publicação
         </Link>
 
@@ -40,7 +40,7 @@ export default function Header() {
           </span>
         )}
         
-        <Link to="/logout" className={styles.logoutLink}>
+        <Link to="/" className={styles.logoutLink}>
           Sair
         </Link>
       </div>
