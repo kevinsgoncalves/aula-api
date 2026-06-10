@@ -1,10 +1,11 @@
 import * as styles from "./Post.module.css";
 import Header from "../../components/Header";
 import { useForm } from "react-hook-form";
+
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api from "../../services/api";
 
 const validationPost = yup.object().shape({
   titulo: yup
@@ -22,7 +23,11 @@ const validationPost = yup.object().shape({
 });
 
 export default function Post() {
+
   const navigate = useNavigate();
+
+
+
 
   const {
     register,
@@ -30,63 +35,60 @@ export default function Post() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(validationPost) });
 
+  // const addPost = (data) => console.log(data);
+
   const addPost = (data) => {
-    axios
-      .post("http://localhost:8080/posts", data)
-      .then(() => {
-        console.log("Dados enviados");
-        navigate("/");
-      })
-      .catch(() => console.log("Erro na requisição"));
-  };
+    api.post("/posts", data)
+    .then(()=>navigate("/feed"))
+    .catch(()=>console.log("Erro na requisição"))
+  }
 
   return (
-    <div className={styles.mainContainer}>
+    <div>
       <Header />
 
-      <main className={styles.mainContent}>
-        <div className={styles.cardPost}>
-          <h2>Criar Postagem</h2>
+      <div className={styles.cardPost}>
+        <h2>Criar Postagem</h2>
+        <hr />
 
-          <div className={styles.cardBodyPost}>
-            <form onSubmit={handleSubmit(addPost)}>
-              
-              <div className={styles.fields}>
-                <label htmlFor="titulo">Título</label>
-                <input
-                  type="text"
-                  id="titulo"
-                  {...register("titulo")}
-                />
-                <p className={styles.errorMessage}>{errors.titulo?.message}</p>
-              </div>
+        <div className={styles.cardBodyPost}>
 
-              <div className={styles.fields}>
-                <label htmlFor="descricao">Descrição</label>
-                <input
-                  type="text"
-                  id="descricao"
-                  {...register("descricao")}
-                />
-                <p className={styles.errorMessage}>{errors.descricao?.message}</p>
-              </div>
+          <form onSubmit={handleSubmit(addPost)}>
+            <div className={styles.fields}>
+              <label htmlFor="titulo">Título</label>
+              <input
+                type="text"
+                id="titulo"
+                name="titulo"
+                {...register("titulo")}
+              />
+<p className={styles.errorMessage}>{errors.titulo?.message}</p>
+              <label htmlFor="titulo">Descrição</label>
+              <input
+                type="text"
+                id="descricao"
+                name="descricao"
+                {...register("descricao")}
+              />
 
-              <div className={styles.fields}>
-                <label htmlFor="conteudo">Conteúdo</label>
-                <textarea
-                  id="conteudo"
-                  {...register("conteudo")}
-                />
-                <p className={styles.errorMessage}>{errors.conteudo?.message}</p>
-              </div>
+<p className={styles.errorMessage}>{errors.descricao?.message}</p>
+              <label htmlFor="conteudo">Conteúdo</label>
+              <textarea
+                name="conteudo"
+                id="conteudo"
+                rows="10"
+                cols="30"
+                {...register("conteudo")}
+              />
+              <p className={styles.errorMessage}>{errors.conteudo?.message}</p>
+            </div>
 
-              <div className={styles.btnPost}>
-                <button type="submit">Enviar</button>
-              </div>
-            </form>
-          </div>
+            <div className={styles.btnPost}>
+              <button>Enviar</button>
+            </div>
+          </form>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
