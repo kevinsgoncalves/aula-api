@@ -41,7 +41,7 @@ export default function Header() {
         )}
         
         <Link to="/" className={styles.logoutLink}>
-          Sair
+          Logout
         </Link>
       </div>
     </header>
